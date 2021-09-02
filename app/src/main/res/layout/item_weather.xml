@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="bindingModel"
+            type="com.nab.weatherforecast.features.forecast.ForecastItemBindingModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,34 +19,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:title="@{@string/title_date}"
-            app:value="@{@string/app_name}" />
+            app:value="@{bindingModel.date}" />
 
         <include
             layout="@layout/view_title_value_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:title="@{@string/title_average_temperature}"
-            app:value="@{@string/app_name}" />
+            app:value="@{bindingModel.aveTemp}" />
 
         <include
             layout="@layout/view_title_value_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:title="@{@string/title_pressure}"
-            app:value="@{@string/app_name}" />
+            app:value="@{bindingModel.pressure}" />
 
         <include
             layout="@layout/view_title_value_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:title="@{@string/title_humidity}"
-            app:value="@{@string/app_name}" />
+            app:value="@{bindingModel.humidity}" />
 
         <include
             layout="@layout/view_title_value_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:title="@{@string/title_description}"
-            app:value="@{@string/app_name}" />
+            app:value="@{bindingModel.desc}" />
     </LinearLayout>
 </layout>
