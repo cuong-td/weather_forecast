@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion project.sdk_version
+    buildToolsVersion project.tools_version
 
     defaultConfig {
-        applicationId "com.example.weatherforecast"
-        minSdkVersion 16
-        targetSdkVersion 30
+        applicationId "com.nab.weatherforecast"
+        minSdkVersion project.min_version
+        targetSdkVersion project.target_version
         versionCode 1
         versionName "1.0"
 

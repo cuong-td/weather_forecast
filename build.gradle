@@ -1,7 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        abc = 123
         kotlin_version = "1.4.32"
     }
     repositories {
@@ -29,6 +28,12 @@ task clean(type: Delete) {
 }
 
 ext {
-    // Define library's versions here
-    abc = "1.6.0"
+    // Define all versions here
+
+    sdk_version = 30
+    min_version = 16
+    target_version = 30
+    tools_version = "30.0.3"
+
+
 }
