@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/view_title_value_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@{@string/title_date}"
+            app:value="@{@string/app_name}" />
+
+        <include
+            layout="@layout/view_title_value_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@{@string/title_average_temperature}"
+            app:value="@{@string/app_name}" />
+
+        <include
+            layout="@layout/view_title_value_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@{@string/title_pressure}"
+            app:value="@{@string/app_name}" />
+
+        <include
+            layout="@layout/view_title_value_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@{@string/title_humidity}"
+            app:value="@{@string/app_name}" />
+
+        <include
+            layout="@layout/view_title_value_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:title="@{@string/title_description}"
+            app:value="@{@string/app_name}" />
+    </LinearLayout>
+</layout>
