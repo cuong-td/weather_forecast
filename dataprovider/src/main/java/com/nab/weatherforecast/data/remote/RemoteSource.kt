@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.QueryMap
 
 interface RemoteSource {
-    @GET
+    @GET("data/2.5/forecast/daily")
     suspend fun fetchDailyForecast(@QueryMap request: Map<String, String>): WeatherForecastResp
 }

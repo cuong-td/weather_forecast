@@ -11,4 +11,5 @@ java {
 dependencies {
     implementation project(':entity')
     implementation project(':dataprovider')
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_version"
 }

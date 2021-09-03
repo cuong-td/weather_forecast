@@ -36,4 +36,5 @@ ext {
     tools_version = "30.0.3"
 
     dagger_version = "2.38.1"
+    coroutines_android_version = "1.4.3"
 }
