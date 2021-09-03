@@ -1,6 +1,6 @@
 package com.nab.weatherforecast.features.forecast
 
-import com.nab.weatherforecast.domain.entity.ForecastInfo
+import com.nab.weatherforecast.entity.ForecastInfo
 
 sealed class ForecastState {
     object LoadingState : ForecastState()
