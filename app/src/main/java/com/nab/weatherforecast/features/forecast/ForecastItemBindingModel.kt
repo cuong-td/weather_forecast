@@ -1,7 +1,7 @@
 package com.nab.weatherforecast.features.forecast
 
 import androidx.databinding.ObservableField
-import com.nab.weatherforecast.data.model.ForecastInfo
+import com.nab.weatherforecast.domain.entity.ForecastInfo
 
 class ForecastItemBindingModel {
     val date = ObservableField<String>()

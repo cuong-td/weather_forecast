@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.data.model
+package com.nab.weatherforecast.domain.entity
 
 data class ForecastInfo(
     val timeStamp: Long,

@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.nab.weatherforecast.R
 import com.nab.weatherforecast.databinding.ActivityForecastBinding
+import com.nab.weatherforecast.ext.hideKeyboard
 import com.nab.weatherforecast.ext.setOnDebounceClick
 
 class ForecastActivity : AppCompatActivity() {
@@ -34,6 +35,7 @@ class ForecastActivity : AppCompatActivity() {
 
             btnGetWeather.setOnDebounceClick {
                 viewModel.test()
+                hideKeyboard()
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.data.model
+package com.nab.weatherforecast.domain.entity
 
 sealed class Either<out L, out R> {
     data class Left<out L, out R>(val a: L) : Either<L, R>()

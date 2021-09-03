@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.nab.weatherforecast.data.model.ForecastInfo
+import com.nab.weatherforecast.domain.entity.ForecastInfo
 import com.nab.weatherforecast.databinding.ItemWeatherBinding
 
 class ForecastAdapter : ListAdapter<ForecastInfo, Holder>(DiffCallback()) {

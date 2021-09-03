@@ -5,9 +5,9 @@ import androidx.databinding.ObservableField
 import androidx.databinding.ObservableInt
 
 class ForecastBindingModel {
-    val errorVisibility = ObservableInt(View.GONE)
-    val errorMessage = ObservableField<String>()
-    val loadingVisibility = ObservableInt(View.GONE)
+    val errorVisibility = ObservableInt(View.VISIBLE)
+    val errorMessage = ObservableField<String>("No data")
+    val loadingVisibility = ObservableInt(View.VISIBLE)
     val dataVisibility = ObservableInt(View.GONE)
 
 
