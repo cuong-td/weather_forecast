@@ -3,7 +3,7 @@ package com.nab.weatherforecast.features.forecast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nab.weatherforecast.data.ForecastInfo
+import com.nab.weatherforecast.data.model.ForecastInfo
 import kotlin.random.Random
 
 class ForecastViewModel : ViewModel() {
