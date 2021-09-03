@@ -1,3 +1,4 @@
+include ':dataprovider'
 include ':domain'
 include ':app'
 rootProject.name = "Weather Forecast"
