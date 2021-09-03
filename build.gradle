@@ -35,5 +35,5 @@ ext {
     target_version = 30
     tools_version = "30.0.3"
 
-
+    dagger_version = "2.38.1"
 }
