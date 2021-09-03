@@ -13,15 +13,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/margin_padding_size_medium"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_padding_size_medium">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_city" />
+            android:hint="@string/hint_city"
+            android:imeOptions="actionSearch" />
 
         <Button
+            android:id="@+id/btn_get_weather"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/get_weather"

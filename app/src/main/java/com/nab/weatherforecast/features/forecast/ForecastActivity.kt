@@ -1,12 +1,14 @@
 package com.nab.weatherforecast.features.forecast
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.nab.weatherforecast.R
 import com.nab.weatherforecast.databinding.ActivityForecastBinding
+import com.nab.weatherforecast.ext.setOnDebounceClick
 
 class ForecastActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityForecastBinding
@@ -17,18 +19,23 @@ class ForecastActivity : AppCompatActivity() {
         viewBinding = DataBindingUtil.setContentView(this, R.layout.activity_forecast)
         setupViewBinding(viewBinding)
         setupObservables()
-        viewModel.test()
     }
 
     private fun setupViewBinding(viewBinding: ActivityForecastBinding) {
-        viewBinding.bindingModel = ForecastBindingModel()
-        viewBinding.rvForecast.adapter = ForecastAdapter()
-        viewBinding.rvForecast.addItemDecoration(
-            DividerItemDecoration(
-                this,
-                DividerItemDecoration.VERTICAL
+        with(viewBinding) {
+            bindingModel = ForecastBindingModel()
+            rvForecast.adapter = ForecastAdapter()
+            rvForecast.addItemDecoration(
+                DividerItemDecoration(
+                    this@ForecastActivity,
+                    DividerItemDecoration.VERTICAL
+                )
             )
-        )
+
+            btnGetWeather.setOnDebounceClick {
+                viewModel.test()
+            }
+        }
     }
 
     private fun setupObservables() {

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Weather Forecast</string>
     <string name="get_weather">Get Weather</string>
-    <string name="hint_city">City…</string>
+    <string name="hint_city">City</string>
 
     <string name="title_date">Date:</string>
     <string name="title_average_temperature">Average temperature:</string>
