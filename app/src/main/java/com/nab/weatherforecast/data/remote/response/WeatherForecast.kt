@@ -1,5 +1,7 @@
 package com.nab.weatherforecast.data.remote.response
 
+import com.google.gson.annotations.SerializedName
+
 data class City(
     val coord: Coord?,
     val country: String?,
@@ -56,8 +58,10 @@ data class Weather(
 
 data class WeatherForecastResp(
     val city: City?,
-    val cnt: Int?,
-    val cod: String?,
+    @SerializedName("cnt")
+    val count: Int?,
+    @SerializedName("cod")
+    val code: String?,
     val list: List<Forecast>?,
     val message: String?
 )
