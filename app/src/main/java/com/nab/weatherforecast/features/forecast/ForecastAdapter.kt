@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.nab.weatherforecast.entity.ForecastInfo
 import com.nab.weatherforecast.databinding.ItemWeatherBinding
+import com.nab.weatherforecast.entity.ForecastInfo
 
 class ForecastAdapter : ListAdapter<ForecastInfo, Holder>(DiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -29,13 +29,12 @@ class Holder(private val viewBinding: ItemWeatherBinding) :
     RecyclerView.ViewHolder(viewBinding.root) {
     fun bindData(data: ForecastInfo) {
         viewBinding.bindingModel?.bind(data)
-//        viewBinding.executePendingBindings()
     }
 }
 
 private class DiffCallback : DiffUtil.ItemCallback<ForecastInfo>() {
     override fun areItemsTheSame(oldItem: ForecastInfo, newItem: ForecastInfo): Boolean {
-        return oldItem == newItem
+        return oldItem.timestampInSeconds == newItem.timestampInSeconds
     }
 
     override fun areContentsTheSame(oldItem: ForecastInfo, newItem: ForecastInfo): Boolean {

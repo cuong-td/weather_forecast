@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.framework.di
+package com.nab.weatherforecast.features.di
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
