@@ -22,7 +22,7 @@ class DiDelegate(private val app: App) {
 
     val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()
-            .application(app)
+            .bindContext(app)
             .bindWeatherForecastRepo(dataComponent.weatherForecastRepo)
             .build()
     }

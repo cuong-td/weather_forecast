@@ -21,11 +21,13 @@ data class Forecast(
     )
 
     companion object {
-//        fun fromInfo(info: ForecastInfo, cityId: Long): Forecast = Forecast(
-//            cityId,
-//            info.timestampInSeconds,
-//            info.averageTemperature.toDouble(),
-//
-//        )
+        fun from(info: ForecastInfo, cityId: Long): Forecast = Forecast(
+            cityId,
+            info.timestampInSeconds * 1000,
+            info.averageTemperature.toDouble(),
+            info.pressure.toInt(),
+            info.humidity.toInt(),
+            info.description
+        )
     }
 }

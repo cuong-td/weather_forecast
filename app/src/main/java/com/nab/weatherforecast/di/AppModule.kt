@@ -1,9 +1,7 @@
 package com.nab.weatherforecast.di
 
 import androidx.lifecycle.ViewModelProvider
-import com.nab.weatherforecast.data.local.LocalSource
 import com.nab.weatherforecast.features.di.ViewModelFactory
-import com.nab.weatherforecast.framework.db.LocalSourceImpl
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton

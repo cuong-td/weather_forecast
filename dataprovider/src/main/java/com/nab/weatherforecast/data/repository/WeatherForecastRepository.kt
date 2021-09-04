@@ -5,5 +5,5 @@ import com.nab.weatherforecast.entity.ForecastInfo
 import kotlinx.coroutines.flow.Flow
 
 interface WeatherForecastRepository {
-    suspend fun fetchDailyForecast(keyword: String): Flow<Either<Error, List<ForecastInfo>>>
+    suspend fun fetchDailyForecast(keyword: String, timestamp: Long): Flow<Either<Error, List<ForecastInfo>>>
 }

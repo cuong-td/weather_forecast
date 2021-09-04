@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class City(
     val coord: Coord?,
     val country: String?,
-    val id: Int?,
+    val id: Long?,
     val name: String?,
     val population: Int?,
     val timezone: Int?

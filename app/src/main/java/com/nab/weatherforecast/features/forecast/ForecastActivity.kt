@@ -32,7 +32,7 @@ class ForecastActivity : AppCompatActivity() {
 
     private fun setupViewBinding(viewBinding: ActivityForecastBinding) {
         with(viewBinding) {
-            bindingModel = ForecastBindingModel()
+            bindingModel = ForecastBindingModel(this@ForecastActivity)
             rvForecast.adapter = ForecastAdapter()
             rvForecast.addItemDecoration(
                 DividerItemDecoration(
