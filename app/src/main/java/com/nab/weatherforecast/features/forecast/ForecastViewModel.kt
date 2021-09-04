@@ -10,7 +10,7 @@ import com.nab.weatherforecast.entity.Error
 import com.nab.weatherforecast.entity.left
 import com.nab.weatherforecast.entity.right
 import com.nab.weatherforecast.ext.currentTimestampForQuery
-import com.nab.weatherforecast.usecase.UseCases
+import com.nab.weatherforecast.usecase.usecases.UseCases
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect

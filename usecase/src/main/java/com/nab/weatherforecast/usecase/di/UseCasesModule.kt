@@ -1,16 +1,14 @@
 package com.nab.weatherforecast.usecase.di
 
-import com.nab.weatherforecast.data.repository.WeatherForecastRepository
-import com.nab.weatherforecast.usecase.UseCases
-import com.nab.weatherforecast.usecase.usecases.GetDailyForecast
+import com.nab.weatherforecast.usecase.usecases.UseCases
+import com.nab.weatherforecast.usecase.usecases.impl.UseCasesImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class UseCasesModule {
-    @Provides
+abstract class UseCasesModule {
+    @Binds
     @Singleton
-    fun provideUseCases(repo: WeatherForecastRepository): UseCases =
-        UseCases(GetDailyForecast(repo))
+    abstract fun bindUseCases(impl: UseCasesImpl): UseCases
 }
