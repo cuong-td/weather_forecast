@@ -17,10 +17,12 @@
         android:paddingHorizontal="@dimen/margin_padding_size_medium">
 
         <EditText
+            android:id="@+id/et_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_city"
             android:imeOptions="actionSearch"
+            android:inputType="text"
             android:text="@={bindingModel.keyword}" />
 
         <Button

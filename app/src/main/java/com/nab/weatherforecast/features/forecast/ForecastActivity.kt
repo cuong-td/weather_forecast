@@ -1,6 +1,7 @@
 package com.nab.weatherforecast.features.forecast
 
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -41,10 +42,25 @@ class ForecastActivity : AppCompatActivity() {
             )
 
             btnGetWeather.setOnDebounceClick {
-                viewModel.search(viewBinding.bindingModel?.keyword?.get() ?: "")
-                hideKeyboard()
+                search()
+            }
+
+            etSearch.setOnEditorActionListener { _, actionId, _ ->
+                var overrideAction: Boolean = false
+                when (actionId) {
+                    EditorInfo.IME_ACTION_SEARCH -> {
+                        search()
+                        overrideAction = true
+                    }
+                }
+                overrideAction
             }
         }
+    }
+
+    private fun search() {
+        viewModel.search(viewBinding.bindingModel?.keyword?.get() ?: "")
+        hideKeyboard()
     }
 
     private fun setupObservables() {
