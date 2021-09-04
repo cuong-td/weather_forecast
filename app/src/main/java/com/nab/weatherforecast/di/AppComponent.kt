@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.framework.di
+package com.nab.weatherforecast.di
 
 import android.app.Application
 import com.nab.weatherforecast.data.repository.WeatherForecastRepository
@@ -8,7 +8,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [ViewModelsModule::class, UseCasesModule::class, AppModule::class])
+@Component(modules = [ViewModelsModule::class, AppModule::class, UseCasesModule::class])
 interface AppComponent : ActivityInjectionProvider {
     @Component.Builder
     interface Builder {
@@ -16,7 +16,7 @@ interface AppComponent : ActivityInjectionProvider {
         fun application(app: Application): Builder
 
         @BindsInstance
-        fun weatherForecastRepo(repo: WeatherForecastRepository): Builder
+        fun bindWeatherForecastRepo(repo: WeatherForecastRepository): Builder
 
         fun build(): AppComponent
     }

@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.framework.di
+package com.nab.weatherforecast.di
 
 import androidx.lifecycle.ViewModelProvider
 import com.nab.weatherforecast.data.local.LocalSource
@@ -10,9 +10,6 @@ import javax.inject.Singleton
 
 @Module
 abstract class AppModule {
-    @Binds
-    @Singleton
-    abstract fun bindLocalSource(impl: LocalSourceImpl): LocalSource
 
     @Binds
     @Singleton

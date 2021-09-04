@@ -13,7 +13,7 @@ abstract class WeatherForecastDb : RoomDatabase() {
     abstract val cityQueryDao: CityQueryDao
 
     companion object {
-        private const val DATABASE_NAME = ""
+        private const val DATABASE_NAME = "weather_forecast_db"
         fun buildDatabase(context: Context): WeatherForecastDb =
             Room.databaseBuilder(context, WeatherForecastDb::class.java, DATABASE_NAME).build()
     }

@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.framework.di
+package com.nab.weatherforecast.di
 
 import com.nab.weatherforecast.features.forecast.ForecastActivity
 

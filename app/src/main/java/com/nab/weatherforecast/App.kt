@@ -1,8 +1,8 @@
 package com.nab.weatherforecast
 
 import android.app.Application
-import com.nab.weatherforecast.framework.di.ActivityInjectionProvider
-import com.nab.weatherforecast.framework.di.InjectorProvider
+import com.nab.weatherforecast.di.ActivityInjectionProvider
+import com.nab.weatherforecast.di.InjectorProvider
 
 class App : Application(), InjectorProvider {
     private lateinit var diDelegate: DiDelegate

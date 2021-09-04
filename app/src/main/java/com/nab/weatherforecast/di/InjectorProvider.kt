@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.framework.di
+package com.nab.weatherforecast.di
 
 interface InjectorProvider {
     fun activityInjector(): ActivityInjectionProvider
