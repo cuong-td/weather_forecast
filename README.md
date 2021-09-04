@@ -2,19 +2,19 @@
 
 ## Check list:
 
-1. ✅ Programming language: Kotlin is required, Java is optional. 
-2. ✅ Design app's architecture (suggest MVVM)
-3. ✅ Apply LiveData mechanism
-4. ✅ UI should be looks like in attachment.
-5. WriteUnitTests
-6. AcceptanceTests
-7. ✅ Exception handling
-8. ✅ Caching handling
+1. ✅    Programming language: Kotlin is required, Java is optional. 
+2. ✅    Design app's architecture (suggest MVVM)
+3. ✅    Apply LiveData mechanism
+4. ✅    UI should be looks like in attachment.
+5. Write Unit Tests
+6. Acceptance Tests
+7. ✅    Exception handling
+8. ✅    Caching handling
 9. Secure Android app from:
-    * ✅ Decompile APK
-    * Rooted device
-    * Data transmission via network
-    * Encryption for sensitive information
+* ✅ Decompile APK
+* Rooted device
+* Data transmission via network
+* Encryption for sensitive information
 10. Accessibility for Disability Supports:
 * Talkback: Use a screen reader.
 * Scaling Text: Display size and font size: To change the size of items on your screen, adjust the display size or font size.
