@@ -1,12 +1,16 @@
 package com.nab.weatherforecast.data.remote.request
 
-import com.google.gson.annotations.SerializedName
+enum class TemperatureUnit(val value: String, val sign: String = "") {
+    KELVIN(
+        value = "default",
+    ),
 
-enum class TemperatureUnit {
-    @SerializedName("default")
-    KELVIN,
-    @SerializedName("metric")
-    CELSIUS,
-    @SerializedName("imperial")
-    FAHRENHEIT
+    CELSIUS(
+        value = "metric",
+        sign = "\u2103"
+    ),
+
+    FAHRENHEIT(
+        value = "imperial"
+    )
 }

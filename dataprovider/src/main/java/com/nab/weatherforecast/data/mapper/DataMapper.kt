@@ -1,5 +1,6 @@
 package com.nab.weatherforecast.data.mapper
 
+import com.nab.weatherforecast.data.remote.request.TemperatureUnit
 import com.nab.weatherforecast.data.remote.response.Forecast
 import com.nab.weatherforecast.entity.Error
 import com.nab.weatherforecast.entity.ForecastInfo
@@ -7,14 +8,15 @@ import retrofit2.HttpException
 import java.io.IOException
 import java.net.UnknownHostException
 
-fun Forecast.toInfo(): ForecastInfo = ForecastInfo(
+fun Forecast.toInfo(unit: TemperatureUnit): ForecastInfo = ForecastInfo(
     dt ?: 0,
-    temp?.let { ((it.min?.toInt() ?: 0) + (it.max?.toInt() ?: 0)) / 2 }.toString(),
-    pressure?.toString() ?: "",
-    humidity?.toString() ?: "",
+    temp?.let { ((it.min ?: 0.0) + (it.max ?: 0.0)) / 2 }?.toInt() ?: 0,
+    pressure ?: 0,
+    humidity ?: 0,
     weather?.joinToString(", ") {
         it.description ?: ""
-    } ?: "No description"
+    } ?: "No description",
+    unit.sign
 )
 
 fun Throwable.toLocalError(): Error = when (this) {

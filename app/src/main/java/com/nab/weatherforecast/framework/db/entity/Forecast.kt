@@ -7,27 +7,30 @@ import com.nab.weatherforecast.entity.ForecastInfo
 data class Forecast(
     val cityId: Long = 0L,
     val timestamp: Long = 0L,
-    val averageTemperature: Double,
+    val averageTemperature: Int,
     val pressure: Int,
     val humidity: Int,
-    val description: String
+    val description: String,
+    val tempSign: String
 ) {
     fun toInfo(): ForecastInfo = ForecastInfo(
-        timestamp,
-        averageTemperature.toString(),
-        pressure.toString(),
-        humidity.toString(),
-        description
+        timestamp / 1000,
+        averageTemperature,
+        pressure,
+        humidity,
+        description,
+        tempSign
     )
 
     companion object {
         fun from(info: ForecastInfo, cityId: Long): Forecast = Forecast(
             cityId,
             info.timestampInSeconds * 1000,
-            info.averageTemperature.toDouble(),
-            info.pressure.toInt(),
-            info.humidity.toInt(),
-            info.description
+            info.averageTemperature,
+            info.pressure,
+            info.humidity,
+            info.description,
+            info.temperatureSign
         )
     }
 }

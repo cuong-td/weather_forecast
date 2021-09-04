@@ -13,9 +13,9 @@ class ForecastItemBindingModel {
 
     fun bind(info: ForecastInfo) {
         date.set(displayTimestamp(info.timestampInSeconds * 1000))
-        aveTemp.set(info.averageTemperature)
-        pressure.set(info.pressure)
-        humidity.set(info.humidity)
+        aveTemp.set("${info.averageTemperature}${info.temperatureSign}")
+        pressure.set("${info.pressure}")
+        humidity.set("${info.humidity}%")
         desc.set(info.description)
     }
 }
