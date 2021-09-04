@@ -10,8 +10,8 @@ import javax.inject.Singleton
 interface DataComponent : DataExposeApiProvider {
     @Component.Builder
     interface Builder {
-//        @BindsInstance
-//        fun bindLocalSource(localSource: LocalSource)
+        @BindsInstance
+        fun bindLocalSource(localSource: LocalSource)
 
         fun build(): DataComponent
     }
