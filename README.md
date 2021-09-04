@@ -2,8 +2,8 @@
 
 ## Check list:
 
-✅ 1. Programming language: Kotlin is required, Java is optional. 
-✅ 2. Designapp'sarchitecture(suggestMVVM)
+1. ✅ Programming language: Kotlin is required, Java is optional. 
+2. ✅ Designapp'sarchitecture(suggestMVVM)
 3. ApplyLiveDatamechanism
 4. UIshouldbelookslikeinattachment.
 5. WriteUnitTests
