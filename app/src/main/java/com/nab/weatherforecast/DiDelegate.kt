@@ -2,6 +2,7 @@ package com.nab.weatherforecast
 
 import com.nab.weatherforecast.data.di.DaggerDataComponent
 import com.nab.weatherforecast.data.di.DataComponent
+import com.nab.weatherforecast.data.di.DataConfigs
 import com.nab.weatherforecast.di.AppComponent
 import com.nab.weatherforecast.di.DaggerAppComponent
 import com.nab.weatherforecast.framework.di.DaggerFrameworkComponent
@@ -19,6 +20,7 @@ class DiDelegate(private val app: App) {
     private val dataComponent: DataComponent by lazy {
         DaggerDataComponent.builder()
             .bindLocalSource(frameworkComponent.localSource)
+            .bindConfigurations(DataConfigs(BuildConfig.BASE_URL, BuildConfig.API_KEY))
             .build()
     }
 

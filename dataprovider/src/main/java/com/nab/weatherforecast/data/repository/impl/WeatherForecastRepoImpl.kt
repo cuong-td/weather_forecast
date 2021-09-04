@@ -1,5 +1,6 @@
 package com.nab.weatherforecast.data.repository.impl
 
+import com.nab.weatherforecast.data.di.API_KEY_CONFIG
 import com.nab.weatherforecast.data.local.LocalSource
 import com.nab.weatherforecast.data.mapper.toInfo
 import com.nab.weatherforecast.data.mapper.toLocalError
@@ -10,16 +11,20 @@ import com.nab.weatherforecast.entity.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
+import javax.inject.Named
 
 class WeatherForecastRepoImpl
 @Inject
 constructor(
     private val remoteSource: RemoteSource,
     private val localSource: LocalSource,
+    @Named(API_KEY_CONFIG) private val apiKey: String
 ) : WeatherForecastRepository {
     override suspend fun fetchDailyForecast(
         keyword: String,
-        timestamp: Long
+        timestamp: Long,
+        dayCount: Int,
+        unit: TemperatureUnit
     ): Flow<Either<Error, List<ForecastInfo>>> =
         flow {
             val cachedForecast = localSource.loadCachedDailyForecast(keyword, timestamp)
@@ -28,18 +33,18 @@ constructor(
                 return@flow
             }
 
-            val unit = TemperatureUnit.CELSIUS
             val request = mapOf(
                 "q" to keyword,
-                "cnt" to "7",
-                "appid" to "60c6fbeb4b93ac653c492ba806fc346d",
+                "cnt" to dayCount.toString(),
+                "appid" to apiKey,
                 "units" to unit.value
             )
             var city: Pair<Long, String>? = null
             val either = safeExecution {
                 val resp = remoteSource.fetchDailyForecast(request)
                 city = resp.city?.let { (it.id ?: 0) to (it.name ?: "") }
-                resp.list?.map { it.toInfo(unit) }?.let { it.right() } ?: throw NullPointerException()
+                resp.list?.map { it.toInfo(unit) }?.let { it.right() }
+                    ?: throw NullPointerException()
             }
             emit(either)
             if (either is Either.Right) {

@@ -13,6 +13,9 @@ interface DataComponent : DataExposeApiProvider {
         @BindsInstance
         fun bindLocalSource(localSource: LocalSource): Builder
 
+        @BindsInstance
+        fun bindConfigurations(configs: DataConfigs): Builder
+
         fun build(): DataComponent
     }
 }
