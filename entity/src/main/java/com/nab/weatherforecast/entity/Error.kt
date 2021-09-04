@@ -11,6 +11,6 @@ data class Error(
         const val NETWORK = -2
         fun unknown(): Error = Error()
         fun network(): Error = Error(code = NETWORK)
-        fun errorData(code: Int, msg: String, data: Any?): Error = Error(code, msg, data)
+        fun errorData(code: Int, msg: String, data: Any? = null): Error = Error(code, msg, data)
     }
 }
