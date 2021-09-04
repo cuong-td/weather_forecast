@@ -1,23 +1,31 @@
 package com.nab.weatherforecast.features.forecast
 
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.nab.weatherforecast.App
 import com.nab.weatherforecast.R
 import com.nab.weatherforecast.databinding.ActivityForecastBinding
 import com.nab.weatherforecast.ext.hideKeyboard
 import com.nab.weatherforecast.ext.setOnDebounceClick
+import com.nab.weatherforecast.framework.di.ViewModelFactory
+import javax.inject.Inject
 
 class ForecastActivity : AppCompatActivity() {
+    @Inject
+    lateinit var vmFactory: ViewModelFactory
+
+    private val viewModel by viewModels<ForecastViewModel> { vmFactory }
+
     private lateinit var viewBinding: ActivityForecastBinding
-    private val viewModel by viewModels<ForecastViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = DataBindingUtil.setContentView(this, R.layout.activity_forecast)
+        (application as? App)?.activityInjector()?.inject(this)
         setupViewBinding(viewBinding)
         setupObservables()
     }
@@ -34,7 +42,7 @@ class ForecastActivity : AppCompatActivity() {
             )
 
             btnGetWeather.setOnDebounceClick {
-                viewModel.test()
+                viewModel.search()
                 hideKeyboard()
             }
         }

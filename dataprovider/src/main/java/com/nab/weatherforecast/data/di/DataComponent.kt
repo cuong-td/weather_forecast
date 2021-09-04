@@ -1,11 +1,8 @@
 package com.nab.weatherforecast.data.di
 
 import dagger.Component
+import javax.inject.Singleton
 
-@Component(modules = [NetworkModule::class])
-interface DataComponent {
-    @Component.Builder
-    interface Builder {
-        fun build(): DataComponent
-    }
-}
+@Singleton
+@Component(modules = [NetworkModule::class, RepositoryModule::class])
+interface DataComponent : DataExposeApiProvider

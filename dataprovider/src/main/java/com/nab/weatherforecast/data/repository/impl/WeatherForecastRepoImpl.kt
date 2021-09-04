@@ -1,6 +1,5 @@
 package com.nab.weatherforecast.data.repository.impl
 
-import com.nab.weatherforecast.data.local.LocalSource
 import com.nab.weatherforecast.data.mapper.toInfo
 import com.nab.weatherforecast.data.remote.RemoteSource
 import com.nab.weatherforecast.data.repository.WeatherForecastRepository
@@ -15,7 +14,7 @@ class WeatherForecastRepoImpl
 @Inject
 constructor(
     private val remoteSource: RemoteSource,
-    private val localSource: LocalSource? = null,
+//    private val localSource: LocalSource? = null,
 ) : WeatherForecastRepository {
     override suspend fun fetchDailyForecast(): Flow<Either<Error, List<ForecastInfo>>> = flow {
         val request = mapOf(
