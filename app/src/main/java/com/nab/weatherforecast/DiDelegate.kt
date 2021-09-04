@@ -7,7 +7,8 @@ import com.nab.weatherforecast.framework.di.DaggerAppComponent
 
 class DiDelegate(private val app: App) {
     private val dataComponent: DataComponent by lazy {
-        DaggerDataComponent.create()
+        DaggerDataComponent.builder()
+            .build()
     }
 
     val appComponent: AppComponent by lazy {
