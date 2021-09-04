@@ -26,7 +26,7 @@ data class FeelsLike(
 data class Forecast(
     val clouds: Int?,
     val deg: Int?,
-    val dt: Int?,
+    val dt: Long?,
     val feels_like: FeelsLike?,
     val gust: Double?,
     val humidity: Int?,
