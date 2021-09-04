@@ -7,7 +7,7 @@ plugins {
 android {
     signingConfigs {
         nab {
-            storeFile file('/Volumes/data/CuongThai/Works/Android/WeatherForecast/nab')
+            storeFile file('./../nab')
             storePassword '123456'
             keyAlias 'nab'
             keyPassword '123456'
