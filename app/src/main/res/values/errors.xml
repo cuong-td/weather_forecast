@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="err_keyword_len">Keyword is too short</string>
+    <string name="err_unknown">Unknown error</string>
+    <string name="err_network">Network error</string>
+    <string name="err_not_found">Data is not found</string>
 </resources>
