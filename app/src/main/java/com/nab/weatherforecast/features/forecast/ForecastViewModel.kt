@@ -7,7 +7,7 @@ import com.nab.weatherforecast.R
 import com.nab.weatherforecast.base.BaseViewModel
 import com.nab.weatherforecast.entity.Either
 import com.nab.weatherforecast.ext.currentTimestampForQuery
-import com.nab.weatherforecast.framework.UseCases
+import com.nab.weatherforecast.usecase.UseCases
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect

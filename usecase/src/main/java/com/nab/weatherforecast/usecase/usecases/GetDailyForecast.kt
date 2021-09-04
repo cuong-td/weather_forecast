@@ -1,4 +1,4 @@
-package com.nab.weatherforecast.usecase
+package com.nab.weatherforecast.usecase.usecases
 
 import com.nab.weatherforecast.data.repository.WeatherForecastRepository
 

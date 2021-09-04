@@ -1,8 +1,8 @@
-package com.nab.weatherforecast.di
+package com.nab.weatherforecast.usecase.di
 
 import com.nab.weatherforecast.data.repository.WeatherForecastRepository
-import com.nab.weatherforecast.framework.UseCases
-import com.nab.weatherforecast.usecase.GetDailyForecast
+import com.nab.weatherforecast.usecase.UseCases
+import com.nab.weatherforecast.usecase.usecases.GetDailyForecast
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

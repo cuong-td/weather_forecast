@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+    id 'kotlin-kapt'
 }
 
 java {
@@ -12,4 +13,6 @@ dependencies {
     implementation project(':entity')
     implementation project(':dataprovider')
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 }
