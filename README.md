@@ -12,7 +12,7 @@
 8. ✅    Caching handling
 9. Secure Android app from:
 * ✅ Decompile APK
-* Rooted device
+* ✅ Rooted device
 * Data transmission via network
 * Encryption for sensitive information
 10. Accessibility for Disability Supports:
