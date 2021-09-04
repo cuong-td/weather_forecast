@@ -6,7 +6,7 @@
 2. ✅    Design app's architecture (suggest MVVM)
 3. ✅    Apply LiveData mechanism
 4. ✅    UI should be looks like in attachment.
-5. Write Unit Tests
+5. ✅    Write Unit Tests
 6. Acceptance Tests
 7. ✅    Exception handling
 8. ✅    Caching handling
