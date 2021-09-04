@@ -10,6 +10,8 @@ class ForecastBindingModel {
     val loadingVisibility = ObservableInt(View.VISIBLE)
     val dataVisibility = ObservableInt(View.GONE)
 
+    val keyword = ObservableField("")
+
 
     fun bind(state: ForecastState) {
         when (state) {

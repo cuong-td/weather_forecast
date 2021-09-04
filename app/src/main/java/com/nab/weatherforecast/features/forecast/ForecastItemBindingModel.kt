@@ -2,6 +2,7 @@ package com.nab.weatherforecast.features.forecast
 
 import androidx.databinding.ObservableField
 import com.nab.weatherforecast.entity.ForecastInfo
+import com.nab.weatherforecast.ext.displayTimestamp
 
 class ForecastItemBindingModel {
     val date = ObservableField<String>()
@@ -11,7 +12,7 @@ class ForecastItemBindingModel {
     val desc = ObservableField<String>()
 
     fun bind(info: ForecastInfo) {
-        date.set("Tue, 10 Mar 2020")
+        date.set(displayTimestamp(info.timestampInSeconds * 1000))
         aveTemp.set(info.averageTemperature)
         pressure.set(info.pressure)
         humidity.set(info.humidity)

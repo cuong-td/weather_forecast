@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.nab.weatherforecast.App
 import com.nab.weatherforecast.R
@@ -42,7 +41,7 @@ class ForecastActivity : AppCompatActivity() {
             )
 
             btnGetWeather.setOnDebounceClick {
-                viewModel.search()
+                viewModel.search(viewBinding.bindingModel?.keyword?.get() ?: "")
                 hideKeyboard()
             }
         }
