@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        nab {
+            storeFile file('/Volumes/data/CuongThai/Works/Android/WeatherForecast/nab')
+            storePassword '123456'
+            keyAlias 'nab'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion project.sdk_version
     buildToolsVersion project.tools_version
 
@@ -23,7 +31,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.nab
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
