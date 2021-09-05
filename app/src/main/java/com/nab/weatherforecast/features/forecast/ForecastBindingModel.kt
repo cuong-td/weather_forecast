@@ -15,7 +15,6 @@ class ForecastBindingModel(private val context: Context) {
 
     val keyword = ObservableField("")
 
-
     fun bind(state: ForecastState) {
         when (state) {
             ForecastState.LoadingState -> {
