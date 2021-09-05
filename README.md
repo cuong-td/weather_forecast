@@ -49,7 +49,7 @@
         * gradlew installRelease
     * MAC/Ubuntu
         * ./gradlew installRelease
-    * Install from [app-release.apk](./app/release/app-release.apk)
+    * Install from [v1.0](./../../releases/download/1.0/app-release.apk)
 ## Check list:
 
 1. ✅    Programming language: Kotlin is required, Java is optional. 
