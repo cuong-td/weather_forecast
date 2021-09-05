@@ -13,11 +13,11 @@
 9. Secure Android app from:
 * ✅ Decompile APK
 * ✅ Rooted device
-* Data transmission via network
+* ✅ Data transmission via network
 * Encryption for sensitive information
 10. Accessibility for Disability Supports:
-* Talkback: Use a screen reader.
-* Scaling Text: Display size and font size: To change the size of items on your screen, adjust the display size or font size.
+* ✅ Talkback: Use a screen reader.
+* ✅ Scaling Text: Display size and font size: To change the size of items on your screen, adjust the display size or font size.
 11. Entity relationship diagram for the database and solution diagrams for the components, infrastructure design if any
 12. Readme file includes:
 * Brief explanation for the software development principles, patterns & practices being applied
