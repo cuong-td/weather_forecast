@@ -27,11 +27,11 @@
 - ![Project structure](./project-structure.png)
     * Contains 4 modules: `entirty`, `usecases`, `dataprovider`, and main `app`
     * `app` contains:
-        * base: define some base classes that will be extented in the application
-        * di: define dependency injection with application scope
-        * ext: define extensions will be used in the application
-        * features: separate application into many features will make it be easier on scaling up
-        * framework: implementation of Android framework
+        * `base`: define some base classes that will be extented in the application
+        * `di`: define dependency injection with application scope
+        * `ext`: define extensions will be used in the application
+        * `features`: separate application into many features will make it be easier on scaling up
+        * `framework`: implementation of Android framework
 - Libraries/frameworks using in the application:
     *  Kotlin
     *  Coroutines
@@ -47,7 +47,7 @@
         * gradlew installRelease
     * MAC/Ubuntu
         * ./gradlew installRelease
-    * Install from app-release.apk
+    * Install from [app-release.apk](./app/release/app-release.apk)
 ## Check list:
 
 1. ✅    Programming language: Kotlin is required, Java is optional. 
@@ -63,7 +63,7 @@
 * ✅ Rooted device
 * ✅ Data transmission via network
 * Encryption for sensitive information
-    - Can use Crypto to encrypt/decrypt data with Android KeyStore API
+    - Can use [Crypto](./app/src/main/java/com/nab/weatherforecast/utilities/Crypto.kt) to `encrypt`/`decrypt` data with Android KeyStore API
 10. Accessibility for Disability Supports:
 * ✅ Talkback: Use a screen reader.
 * ✅ Scaling Text: Display size and font size: To change the size of items on your screen, adjust the display size or font size.
