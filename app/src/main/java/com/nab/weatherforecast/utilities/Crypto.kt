@@ -9,9 +9,6 @@ import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 import javax.crypto.spec.GCMParameterSpec
 
-private const val TRANSFORMATION = "AES/GCM/NoPadding"
-private const val ANDROID_KEY_STORE = "AndroidKeyStore"
-
 class Crypto {
     private val keyStore = KeyStore.getInstance(ANDROID_KEY_STORE)
 
@@ -67,4 +64,9 @@ class Crypto {
 
     private fun String.decodeBase64() = Base64.decode(this, Base64.NO_WRAP)
     private fun ByteArray.encodeBase64(): String = Base64.encodeToString(this, Base64.NO_WRAP)
+
+    companion object {
+        private const val TRANSFORMATION = "AES/GCM/NoPadding"
+        private const val ANDROID_KEY_STORE = "AndroidKeyStore"
+    }
 }
