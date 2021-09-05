@@ -32,6 +32,7 @@
         * `ext`: define extensions will be used in the application
         * `features`: separate application into many features will make it be easier on scaling up
         * `framework`: implementation of Android framework
+## Framework, library and run
 - Libraries/frameworks using in the application:
     *  Kotlin
     *  Coroutines
@@ -39,6 +40,7 @@
     *  Retrofit
     *  Dagger
     *  Rootbeer
+    *  Mockito
 - Required configurations:
     * AndroidSDK
     * Gradle 6.5
@@ -47,7 +49,7 @@
         * gradlew installRelease
     * MAC/Ubuntu
         * ./gradlew installRelease
-    * Install from [app-release.apk](./app/release/app-release.apk)
+    * Install from [v1.0](./../../releases/download/1.0/app-release.apk)
 ## Check list:
 
 1. ✅    Programming language: Kotlin is required, Java is optional. 
