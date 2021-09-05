@@ -46,7 +46,6 @@ class ForecastViewModelTest {
 
     private lateinit var vm: ForecastViewModel
 
-
     @Before
     fun setUp() {
         Dispatchers.setMain(dispatcher)
@@ -111,10 +110,5 @@ class ForecastViewModelTest {
             advanceUntilIdle()
             verify(observerState).onChanged(any(ForecastState.ErrorState::class.java))
         }
-    }
-
-    companion object {
-        const val VALID_SEARCH = "saigon"
-        const val INVALID_SEARCH_SHORT = "sa"
     }
 }
