@@ -4,7 +4,7 @@
 
 - ![Architecture](./clean-architecture-own-layers.png)
 
-- ![Layers interation](./clean-architecture-interaction.png)
+- ![Layers interation](./clean-architecture-interaction.jpg)
 
 - ![MVVM architecture](./clean-architecture-mvvm.png)
 
