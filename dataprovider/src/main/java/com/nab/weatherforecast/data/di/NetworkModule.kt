@@ -1,6 +1,7 @@
 package com.nab.weatherforecast.data.di
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.nab.weatherforecast.data.remote.RemoteSource
 import dagger.Module
 import dagger.Provides
@@ -20,7 +21,11 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideGson(): Gson = Gson()
+    fun provideGsonBuilder(): GsonBuilder = GsonBuilder()
+
+    @Provides
+    @Singleton
+    fun provideGson(builder: GsonBuilder): Gson = builder.create()
 
     @Provides
     @Singleton
@@ -34,19 +39,11 @@ class NetworkModule {
     @Singleton
     fun provideOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
-//        sslCertificates: SSLCertificates
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(httpLoggingInterceptor)
-//            .certificatePinner(
-//                CertificatePinner.Builder()
-//                    .add(sslCertificates.domainPattern, sslCertificates.cert1)
-//                    .add(sslCertificates.domainPattern, sslCertificates.cert2)
-//                    .add(sslCertificates.domainPattern, sslCertificates.cert3)
-//                    .build()
-//            )
             .build()
     }
 
