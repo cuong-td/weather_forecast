@@ -10,7 +10,7 @@ import com.nab.weatherforecast.framework.di.FrameworkComponent
 import com.nab.weatherforecast.usecase.di.DaggerUseCasesComponent
 import com.nab.weatherforecast.usecase.di.UseCasesComponent
 
-class DiDelegate(private val app: App) {
+open class DiDelegate(private val app: App) {
     private val frameworkComponent: FrameworkComponent by lazy {
         DaggerFrameworkComponent.builder()
             .bindContext(app)
@@ -29,7 +29,7 @@ class DiDelegate(private val app: App) {
             .bindWeatherForecastRepo(dataComponent.weatherForecastRepo)
             .build()
     }
-    val appComponent: AppComponent by lazy {
+    open val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()
             .bindUseCases(useCasesComponent.useCases)
             .build()

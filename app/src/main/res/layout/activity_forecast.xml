@@ -46,6 +46,7 @@
                 tools:listitem="@layout/item_weather" />
 
             <TextView
+                android:id="@+id/tv_err"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -53,6 +54,7 @@
                 android:visibility="@{bindingModel.errorVisibility}" />
 
             <ProgressBar
+                android:id="@+id/loading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
