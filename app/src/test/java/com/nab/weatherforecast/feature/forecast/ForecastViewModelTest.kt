@@ -1,8 +1,11 @@
-package com.nab.weatherforecast
+package com.nab.weatherforecast.feature.forecast
 
 import androidx.arch.core.executor.ArchTaskExecutor
 import androidx.arch.core.executor.TaskExecutor
 import androidx.lifecycle.Observer
+import com.nab.weatherforecast.INVALID_SEARCH_SHORT
+import com.nab.weatherforecast.R
+import com.nab.weatherforecast.VALID_SEARCH
 import com.nab.weatherforecast.entity.Either
 import com.nab.weatherforecast.entity.Error
 import com.nab.weatherforecast.entity.left
@@ -11,6 +14,7 @@ import com.nab.weatherforecast.ext.currentTimestampForQuery
 import com.nab.weatherforecast.features.forecast.ForecastState
 import com.nab.weatherforecast.features.forecast.ForecastViewModel
 import com.nab.weatherforecast.usecase.usecases.UseCases
+import com.nab.weatherforecast.validSearchResult
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.Dispatchers

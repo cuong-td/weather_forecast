@@ -1,5 +1,6 @@
 package com.nab.weatherforecast.ui
 
+import android.view.View
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
@@ -12,8 +13,9 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.nab.weatherforecast.App
 import com.nab.weatherforecast.DiDelegateTest
 import com.nab.weatherforecast.R
-import com.nab.weatherforecast.features.forecast.ForecastActivity
-import com.nab.weatherforecast.features.forecast.Holder
+import com.nab.weatherforecast.entity.ForecastInfo
+import com.nab.weatherforecast.entity.right
+import com.nab.weatherforecast.features.forecast.*
 import com.nab.weatherforecast.usecase.usecases.UseCases
 import com.nab.weatherforecast.usecases.FakeUseCases
 import org.junit.After
@@ -86,4 +88,47 @@ class ForecastUiTest {
             .check(matches(withText(R.string.err_not_found)))
         Thread.sleep(2000)
     }
+
+    @Test
+    fun testItemBindingModel() {
+        val bindingModel = ForecastItemBindingModel()
+        bindingModel.bind(getForecastInfo())
+        assertEquals("Sat, 11 Sep 2021", bindingModel.date.get())
+        assertEquals("30C", bindingModel.aveTemp.get())
+        assertEquals("85", bindingModel.pressure.get())
+        assertEquals("1100%", bindingModel.humidity.get())
+        assertEquals("desc", bindingModel.desc.get())
+    }
+
+    @Test
+    fun testBindingModel() {
+        val bindingModel =
+            ForecastBindingModel(InstrumentationRegistry.getInstrumentation().targetContext)
+
+        bindingModel.bind(ForecastState.LoadingState)
+        assertEquals(View.VISIBLE, bindingModel.loadingVisibility.get())
+        assertEquals(View.GONE, bindingModel.errorVisibility.get())
+        assertEquals(View.GONE, bindingModel.dataVisibility.get())
+
+        val errMsg = "Error Message"
+        bindingModel.bind(ForecastState.ErrorState(errMsg.right()))
+        assertEquals(View.GONE, bindingModel.loadingVisibility.get())
+        assertEquals(View.VISIBLE, bindingModel.errorVisibility.get())
+        assertEquals(View.GONE, bindingModel.dataVisibility.get())
+        assertEquals(errMsg, bindingModel.errorMessage.get())
+
+        bindingModel.bind(ForecastState.SuccessState(listOf(getForecastInfo())))
+        assertEquals(View.GONE, bindingModel.loadingVisibility.get())
+        assertEquals(View.GONE, bindingModel.errorVisibility.get())
+        assertEquals(View.VISIBLE, bindingModel.dataVisibility.get())
+    }
+
+    private fun getForecastInfo() = ForecastInfo(
+        timestampInSeconds = 1631331288,
+        averageTemperature = 30,
+        pressure = 85,
+        humidity = 1100,
+        description = "desc",
+        temperatureSign = "C"
+    )
 }
