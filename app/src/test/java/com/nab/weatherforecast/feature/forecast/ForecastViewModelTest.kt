@@ -2,6 +2,7 @@ package com.nab.weatherforecast.feature.forecast
 
 import androidx.arch.core.executor.ArchTaskExecutor
 import androidx.arch.core.executor.TaskExecutor
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.nab.weatherforecast.INVALID_SEARCH_SHORT
 import com.nab.weatherforecast.R
@@ -113,6 +114,14 @@ class ForecastViewModelTest {
             verify(observerState).onChanged(ForecastState.LoadingState)
             advanceUntilIdle()
             verify(observerState).onChanged(any(ForecastState.ErrorState::class.java))
+        }
+    }
+
+    @Test
+    fun `check cast for live data`() {
+        dispatcher.runBlockingTest {
+            (vm.temp as MutableLiveData).value = "Ok"
+            assertEquals("Ok", vm.temp.value)
         }
     }
 }

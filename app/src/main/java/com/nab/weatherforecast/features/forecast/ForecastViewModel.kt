@@ -26,6 +26,9 @@ constructor(
 ) : BaseViewModel() {
 
     val state: LiveData<ForecastState> = MutableLiveData()
+    val temp: LiveData<String>
+        get() = _temp
+    private val _temp = MutableLiveData<String>()
 
     private var searchJob: Job? = null
 
